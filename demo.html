@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="mathquill-0.9.1/mathquill.css">
+    <script src="js/jquery-1.9.0.min.js"></script>
+    <script src="mathquill-0.9.1/mathquill.min.js"></script>
+    </head>
+    <body>
+        <span class="mathquill-embedded-latex">\frac{d}{dx}\sqrt{x}</span>
+        <span id="editor" class="mathquill-editable">f(x)=?</span>
+        <input type="button" id="getEditedEquation" value="取值"/>
+    </body>
+    <script>
+    $(document).ready(function(){
+            $('<span>x^2</span>').appendTo('body').mathquill();
+            $('.mathquill-embedded-latex').mathquill('revert');
+            $("#getEditedEquation").click(function(){
+                alert($("#editor").mathquill('latex'));
+            });
+        });
+    </script>
+</html>
